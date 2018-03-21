@@ -1,0 +1,277 @@
+
+//////////////////
+// header
+
+
+.header {
+
+    height: 7rem;
+    font-size: 1.4rem;
+    background-color: #fff;
+
+    &__logo {
+        height: 3.5rem;
+        margin-left: 2rem;
+    }
+ 
+    &__form {
+        flex: 0 0 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include respond (phone-small) {
+           flex: 0 0 100%;
+           order: 2;
+        }
+    }
+
+    &__input {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: var(--color-grey-light-2);
+        padding: .6rem 2rem;
+        width: 88%;
+        border-radius: 100rem;
+        border: none;
+        outline: none;
+        margin-right: -3rem;
+        transition: all .5s;
+  
+        &:focus {
+            width: 100%;
+            background-color: var(--color-grey-light-3);
+        }
+        &::-webkit-input-placeholder {
+            font-weight: 100;
+            color: var(--color-grey-light-4);
+        }
+    }
+ 
+    &__button {
+        border: none;
+        outline: none;
+        margin-right: 1rem;
+        background: transparent;
+        cursor: pointer;
+        transition: all .1s;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:active {
+            transform: translateY(2px);
+        }
+    }
+
+    &__button-svg {
+        height: 2rem;
+        width: 2rem;
+        fill: var(--color-grey-dark-3);
+    }
+
+    &__nav {
+
+        align-self: stretch;
+
+        display: flex;
+
+        & > * {
+            display: flex;
+            align-items: center;
+
+            padding: 0 2rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--color-grey-light-4);
+            }
+            @include respond (phone-smallest) {
+                flex: 1;
+            }
+            
+        }
+    }
+
+    &__icon-box {
+        position: relative;
+
+        @include respond (phone-smallest) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__icon {
+        height: 2.25rem;
+        width: 2.25rem;
+        fill: var(--color-grey-dark-2);
+    }
+     
+    &__notification {
+        font-size: .8rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
+        color: #fff;
+        background-color: var(--color-primary);
+        position: absolute;
+        top: 1.5rem;
+        right: 1.1rem;
+
+        @include respond (phone-small) {
+            top: 1rem;
+            right: 1.1rem;
+        }
+        @include respond (phone-smallest) {
+            top: .5rem;
+            right: 1.2rem;
+        }
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__profile-pic {
+        height: 3.75rem;
+        border-radius: 100rem;
+        margin-right: 1rem;
+    }
+
+}
+
+//////////////////
+// side-bar
+
+.side-bar {
+
+    color: var(--color-grey-light-4);
+    font-size: 1.4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__nav {
+        list-style: none;
+        padding-top: 3.5rem;
+
+        @include respond (tab) {
+           display: flex;
+           flex: 0 0 100%;
+           padding-top: 0;
+        }
+
+    }
+
+    &__nav-item {
+
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        } 
+
+        &::before{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 3px;
+            background: var(--color-primary);
+            transform: scaleY(0);   
+            transition: transform .2s,
+                width .4s cubic-bezier(1,0,0,1) .2s,
+                background-color .1s; 
+        } 
+
+        &:hover::before,
+        &--active::before{
+            width: 100%;
+            transform: scaleY(1);
+        }
+        &:active::before {
+            background-color: var(--color-primary-light);
+        }
+
+
+
+
+        @include respond (tab) {
+            flex: 1;
+
+            &:not(:last-child) {
+                margin-bottom: 0;
+            }
+        }
+        
+    }
+
+    &__nav-link {
+
+        &:link,
+        &:visited {
+            color:  var(--color-grey-light-1);
+            font-size: inherit;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 1.5rem 3rem;
+            display: block;
+            position: relative;
+            z-index: 1;
+
+            display: flex;
+            align-items: center;
+        }
+        
+
+        @include respond (tab) {
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+        }
+        @include respond (phone) {
+            flex-direction: column;
+        }
+        @include respond (phone-small) {
+            text-align: center;
+            padding: 1rem;
+        }
+
+    }
+    &__nav-link--active::before {
+                width: 100%;
+                transform: scaleY(1);
+    }
+
+    &__nav-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: currentColor;
+        margin-right: 1rem;
+
+        @include respond (phone) {
+            margin-right: 0;
+            margin-bottom: .5rem;
+        }
+    }
+
+    &__legal {
+        font-size: 1.2rem;
+        padding: 2.5rem;
+        text-align: center;
+
+        @include respond (tab) {
+            display: none;
+        }
+    }
+}
+
+//////////////////
+// hotel-view
+
