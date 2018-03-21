@@ -227,21 +227,21 @@
 
             display: flex;
             align-items: center;
-        }
-        
 
-        @include respond (tab) {
-            display: flex;
-            justify-content: center;
-            padding: 2rem;
+            @include respond (tab) {
+                justify-content: center;
+                padding: 2rem;
+            }
+            @include respond (phone) {
+                flex-direction: column;
+                padding: 1rem .5rem;
+            }
+            @include respond (phone-small) {
+                text-align: center;
+                padding: 2rem .5rem;
+            }
         }
-        @include respond (phone) {
-            flex-direction: column;
-        }
-        @include respond (phone-small) {
-            text-align: center;
-            padding: 1rem;
-        }
+    
 
     }
     &__nav-link--active::before {
@@ -257,7 +257,13 @@
 
         @include respond (phone) {
             margin-right: 0;
-            margin-bottom: .5rem;
+            margin-bottom: .5rem; 
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        @include respond (phone-smallest) {
+            margin-bottom: .3rem;
+            
         }
     }
 
@@ -275,3 +281,128 @@
 //////////////////
 // hotel-view
 
+//////////////////
+// gallery
+
+.gallery {
+
+    display: flex;
+
+    &__img-box {
+        width: 33.33%;
+    }
+ 
+    &__img {
+        width: 100%;
+        display: block;
+    }
+}
+
+//////////////////
+// hotel
+
+.hotel {
+    background: yellow;
+
+    display: flex;
+    align-items: center;
+
+    
+    &__name {
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 1.9rem;
+        padding: 1.5rem 3rem;
+
+         @include respond(phone-small) {  
+              padding: 1rem !important;
+              font-size: 1.5rem;
+         }
+
+    }
+
+    &__star-box { 
+        margin-right: auto;
+        display: flex;
+    }
+
+    &__star-icon {
+        width: 2rem;
+        height: 2rem;
+        fill: var(--color-primary-light);
+
+        @include respond(phone-small) {  
+            width: 1.5rem;
+            height: 1.5rem;
+         }
+    }
+
+    &__location-box { 
+        display: flex;
+        align-items: center;
+        margin: 0 3rem;
+
+        @include respond(phone-small) {  
+              margin: 1rem ;
+         }
+    }
+
+    &__location-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: var(--color-primary-light);
+        margin-right: 1rem;
+    }
+
+    &__btn {
+
+    }
+
+    
+    &__voting {
+        color: #fff;
+        background: var(--color-primary-light);
+        padding: 1rem 2rem;
+        text-align: center;
+
+        align-self: stretch;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__numeric {
+        font-size: 1.8rem;
+    }
+
+    &__voter {
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
+    .btn-inline {
+        text-decoration: none;
+        font-size: inherit;
+        color: var(--color-primary-light);
+        display: inline-block;
+        padding-bottom: 2px; 
+        background-color: transparent;
+        border-bottom: 1px solid currentColor;
+        text-align: center;
+        transition: all .2s;
+
+
+        &:hover {
+             color: var(--color-grey-dark-1);         
+        }
+        &:focus {
+            animation: moveUp 1s infinite;
+           
+        }
+
+        @include respond(phone-small) {  
+              line-height: 1.3;
+        }
+    }
+
+}

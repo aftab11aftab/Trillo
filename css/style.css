@@ -113,6 +113,27 @@ body {
 .u-center {
   text-align: center !important; }
 
+@keyframes moveUp {
+  0% {
+    transform: scale(1);
+    box-shadow: none; }
+  50% {
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+    transform: scale(1.05); }
+  100% {
+    transform: scale(1);
+    box-shadow: none; } }
+
+@keyframes moveinLeft {
+  0% {
+    transform: translate(20%, 0);
+    opacity: 0; }
+  70% {
+    transform: translate(-5%, 0); }
+  100% {
+    transform: translate(0);
+    opacity: 1; } }
+
 .header {
   height: 7rem;
   font-size: 1.4rem;
@@ -262,18 +283,18 @@ body {
     z-index: 1;
     display: flex;
     align-items: center; }
-  @media only screen and (max-width: 56.25em) {
-    .side-bar__nav-link {
-      display: flex;
-      justify-content: center;
-      padding: 2rem; } }
-  @media only screen and (max-width: 37.5em) {
-    .side-bar__nav-link {
-      flex-direction: column; } }
-  @media only screen and (max-width: 31.25em) {
-    .side-bar__nav-link {
-      text-align: center;
-      padding: 1rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .side-bar__nav-link:link, .side-bar__nav-link:visited {
+        justify-content: center;
+        padding: 2rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .side-bar__nav-link:link, .side-bar__nav-link:visited {
+        flex-direction: column;
+        padding: 1rem .5rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .side-bar__nav-link:link, .side-bar__nav-link:visited {
+        text-align: center;
+        padding: 2rem .5rem; } }
   .side-bar__nav-link--active::before {
     width: 100%;
     transform: scaleY(1); }
@@ -285,7 +306,12 @@ body {
     @media only screen and (max-width: 37.5em) {
       .side-bar__nav-icon {
         margin-right: 0;
-        margin-bottom: .5rem; } }
+        margin-bottom: .5rem;
+        width: 1.5rem;
+        height: 1.5rem; } }
+    @media only screen and (max-width: 15em) {
+      .side-bar__nav-icon {
+        margin-bottom: .3rem; } }
   .side-bar__legal {
     font-size: 1.2rem;
     padding: 2.5rem;
@@ -293,6 +319,82 @@ body {
     @media only screen and (max-width: 56.25em) {
       .side-bar__legal {
         display: none; } }
+
+.gallery {
+  display: flex; }
+  .gallery__img-box {
+    width: 33.33%; }
+  .gallery__img {
+    width: 100%;
+    display: block; }
+
+.hotel {
+  background: yellow;
+  display: flex;
+  align-items: center; }
+  .hotel__name {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1.9rem;
+    padding: 1.5rem 3rem; }
+    @media only screen and (max-width: 31.25em) {
+      .hotel__name {
+        padding: 1rem !important;
+        font-size: 1.5rem; } }
+  .hotel__star-box {
+    margin-right: auto;
+    display: flex; }
+  .hotel__star-icon {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-primary-light); }
+    @media only screen and (max-width: 31.25em) {
+      .hotel__star-icon {
+        width: 1.5rem;
+        height: 1.5rem; } }
+  .hotel__location-box {
+    display: flex;
+    align-items: center;
+    margin: 0 3rem; }
+    @media only screen and (max-width: 31.25em) {
+      .hotel__location-box {
+        margin: 1rem; } }
+  .hotel__location-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--color-primary-light);
+    margin-right: 1rem; }
+  .hotel__voting {
+    color: #fff;
+    background: var(--color-primary-light);
+    padding: 1rem 2rem;
+    text-align: center;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .hotel__numeric {
+    font-size: 1.8rem; }
+  .hotel__voter {
+    font-size: .8rem;
+    text-transform: uppercase; }
+  .hotel .btn-inline {
+    text-decoration: none;
+    font-size: inherit;
+    color: var(--color-primary-light);
+    display: inline-block;
+    padding-bottom: 2px;
+    background-color: transparent;
+    border-bottom: 1px solid currentColor;
+    text-align: center;
+    transition: all .2s; }
+    .hotel .btn-inline:hover {
+      color: var(--color-grey-dark-1); }
+    .hotel .btn-inline:focus {
+      animation: moveUp 1s infinite; }
+    @media only screen and (max-width: 31.25em) {
+      .hotel .btn-inline {
+        line-height: 1.3; } }
 
 .container {
   max-width: 120rem;
@@ -319,7 +421,6 @@ body {
       height: 14rem; } }
 
 .content {
-  background: red;
   display: flex; }
   @media only screen and (max-width: 56.25em) {
     .content {

@@ -29,8 +29,6 @@
 
 .content {
     
-    background: red;
-
     display: flex;
 
     @include respond (tab) {
@@ -41,10 +39,9 @@
 
     .side-bar {
 
-        flex: 0 0 18%;
-
-         
-         background-color: var(--color-grey-dark-1);
+        flex: 0 0 18%;  
+        
+        background-color: var(--color-grey-dark-1);
     }
     .hotel-view {
         background-color: #fff;
