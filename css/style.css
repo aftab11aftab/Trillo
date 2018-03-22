@@ -370,7 +370,7 @@ body {
   .hotel__numeric {
     font-size: 1.8rem; }
   .hotel__voter {
-    font-size: .8rem;
+    font-size: 1rem;
     text-transform: uppercase; }
 
 .btn-inline {
@@ -511,7 +511,7 @@ body {
       font-weight: 700;
       margin-bottom: .5rem; }
     .details .review__date {
-      font-size: 1rem; }
+      font-size: 1.2rem; }
     .details .review__rating {
       font-size: 2rem;
       color: var(--color-primary);
