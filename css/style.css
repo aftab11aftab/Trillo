@@ -435,7 +435,7 @@ body {
     .details__description .description__item {
       flex: 0 0 50%;
       margin-right: auto; }
-      @media only screen and (max-width: 37.5em) {
+      @media only screen and (max-width: 27em) {
         .details__description .description__item {
           flex: 0 0 100%; } }
       .details__description .description__item::before {

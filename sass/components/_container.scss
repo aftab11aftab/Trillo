@@ -484,7 +484,7 @@
                 flex: 0 0 50%;
                 margin-right: auto;
 
-                @include respond(phone) {  
+                @include respond(phone-smaller) {  
                     flex: 0 0 100%;
                 }
 
@@ -559,7 +559,7 @@
             content: "\201C";
             font-size: 20rem;
             font-family: sans-serif;
-            line-height: 1;
+            line-height: 1; 
             color: var(--color-grey-light-2);
             z-index: 1;
             position: absolute;
