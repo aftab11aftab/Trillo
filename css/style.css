@@ -9,13 +9,7 @@ html {
   font-size: 62.5%; }
   @media only screen and (max-width: 75em) {
     html {
-      font-size: 56.25%; } }
-  @media only screen and (max-width: 56.25em) {
-    html {
       font-size: 50%; } }
-  @media only screen and (max-width: 37.5em) {
-    html {
-      font-size: 44%; } }
   @media only screen and (min-width: 112.5em) {
     html {
       font-size: 75%; } }
@@ -441,6 +435,9 @@ body {
     .details__description .description__item {
       flex: 0 0 50%;
       margin-right: auto; }
+      @media only screen and (max-width: 37.5em) {
+        .details__description .description__item {
+          flex: 0 0 100%; } }
       .details__description .description__item::before {
         content: "";
         display: inline-block;
@@ -472,8 +469,7 @@ body {
         .details__description .description__recomended .recomended__img:not(:last-child) {
           margin-right: -2rem; }
   .details__review {
-    flex: 1;
-    text-align: center; }
+    flex: 1; }
   .details .review {
     background-color: #fff;
     box-shadow: var(--shadow-light);
@@ -520,13 +516,15 @@ body {
       font-size: 2rem;
       color: var(--color-primary);
       font-weight: 100; }
+    .details .review__btn-box {
+      text-align: center; }
 
 .book {
-  padding: 3.5rem 0;
+  padding: 3.5rem;
   text-align: center; }
   @media only screen and (max-width: 56.25em) {
     .book {
-      padding: 2.5rem 0; } }
+      padding: 2rem; } }
   .book__text {
     font-size: 2rem;
     font-weight: 300;
@@ -559,10 +557,8 @@ body {
   .book__btn:hover {
     background-image: linear-gradient(to right, var(--color-primary-dark), var(--color-primary-light)); }
   .book__btn:hover .book__btn-front {
-    color: #000;
     transform: translateY(300%); }
   .book__btn:hover .book__btn-back {
-    color: #fff;
     top: 0%; }
   .book__btn:focus {
     outline: none;

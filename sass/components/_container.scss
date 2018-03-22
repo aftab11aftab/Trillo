@@ -477,11 +477,16 @@
                 
                 display: flex;
                 flex-wrap: wrap;
+                    
             }
 
             &__item {
                 flex: 0 0 50%;
                 margin-right: auto;
+
+                @include respond(phone) {  
+                    flex: 0 0 100%;
+                }
 
                 &::before {
                     content: "";
@@ -540,8 +545,6 @@
     &__review {
 
         flex: 1;
-
-        text-align: center;
     }
 
     .review {
@@ -606,8 +609,8 @@
             font-weight: 100;
         }
 
-        &__btn {
-            
+        &__btn-box {
+            text-align: center;
         }
     }
 
@@ -617,11 +620,11 @@
 // book
 
 .book {
-    padding: 3.5rem 0;
+    padding: 3.5rem;
     text-align: center;
 
     @include respond(tab) {  
-        padding: 2.5rem 0;
+        padding: 2rem;
     }
 
     &__text {
@@ -669,11 +672,9 @@
         background-image: linear-gradient(to right, var(--color-primary-dark), var(--color-primary-light));
     }
     &:hover &-front {
-        color: #000;
         transform: translateY(300%);
     }
     &:hover &-back {
-        color: #fff;
         top: 0%;
     }
     &:focus {

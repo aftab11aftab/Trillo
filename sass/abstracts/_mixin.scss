@@ -28,6 +28,9 @@
      @if $break == phone-small {
         @media only screen and (max-width: 31.25em) { @content;}
     }
+    @if $break == phone-smaller {
+        @media only screen and (max-width: 27em) { @content;}
+    }
     @if $break == phone-smallest {
         @media only screen and (max-width: 15em) { @content;}
     }
