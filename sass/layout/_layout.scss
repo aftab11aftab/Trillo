@@ -32,7 +32,6 @@
     display: flex;
 
     @include respond (tab) {
-        //  display: block;
         flex-direction: column;
     }
 
@@ -44,8 +43,6 @@
         background-color: var(--color-grey-dark-1);
     }
     .hotel-view {
-        background-color: #fff;
-        height: 40rem;
 
         flex: 1;
     }
